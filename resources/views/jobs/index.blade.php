@@ -1,13 +1,16 @@
 <x-layout>
-    <h1>{{$title}}</h1>
+    <h1>available Jobs</h1>
    
         
     <ul>
         @forelse($jobs as $job )
             
-        <li>{{$job}}</li>
+        <li>
+
+            <a href="{{route('jobs.show',$job->id)}}">
+            {{$job->title}}-{{$job->description}}</li></a>
         @empty
-            <li>No job availbale</li>
+            <li>No job available</li>
         @endforelse
        
      </ul>
